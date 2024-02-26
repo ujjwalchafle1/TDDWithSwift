@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import CoreLocation
 
-struct Location: Equatable {
+struct Location: Equatable, Codable {
     static func == (lhs: Location, rhs: Location) -> Bool {
         if lhs.name != rhs.name {
             return false
@@ -35,11 +34,11 @@ struct Location: Equatable {
     }
     
     let name: String
-    let coordinates: CLLocationCoordinate2D?
+    let coordinates: Coordinates?
     
     init(
         name: String,
-        coordinates: CLLocationCoordinate2D? = nil
+        coordinates: Coordinates? = nil
     ) {
         self.name = name
         self.coordinates = coordinates

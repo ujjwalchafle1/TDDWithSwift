@@ -7,7 +7,6 @@
 
 import XCTest
 @testable import ToDo
-import CoreLocation
 
 final class LocationTests: XCTestCase {
 
@@ -20,7 +19,7 @@ final class LocationTests: XCTestCase {
     }
     
     func test_init_givenCoordinates_setsCoordinates() throws {
-        let coordinates = CLLocationCoordinate2D(latitude: 1, longitude: 2)
+        let coordinates = Coordinates(latitude: 1, longitude: 2)
         
         let location = Location(name: "", coordinates: coordinates)
         
